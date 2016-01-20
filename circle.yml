@@ -1,8 +1,8 @@
 machine:
-    java:
-        version: oraclejdk8
+  java:
+    version: oraclejdk8
 
 database:
-    override:
-    - cp src/main/resources/ga/rugal/core/db_circleci.clj  src/main/resources/ga/rugal/core/db.clj
+  override:
     - psql -f 'db/postgresql.sql' circle_test ubuntu
+    - cp src/main/resources/ga/rugal/core/db_circleci.clj  src/main/resources/ga/rugal/core/db.clj
