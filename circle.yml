@@ -6,3 +6,4 @@ database:
   override:
     - psql -f 'db/postgresql.sql' circle_test ubuntu
     - cp src/main/resources/ga/rugal/core/db_circleci.clj  src/main/resources/ga/rugal/core/db.clj
+    - rm  src/main/resources/ga/rugal/core/db_*.clj
