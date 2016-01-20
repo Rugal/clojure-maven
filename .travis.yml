@@ -1,4 +1,5 @@
-language: clojure
+language: java
+jdk: oraclejdk8
 
 addons:
   postgresql: "9.3"
