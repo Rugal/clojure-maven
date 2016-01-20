@@ -6,7 +6,7 @@
 (def dbinfo
   {:classname   "org.postgresql.Driver"
    :subprotocol "postgresql"
-   :subname     (str "//localhost:5432/postgres")
+   :subname     (str "//localhost:5434/test")
    ; Any additional keys are passed to the driver
    ; as driver-specific properties.
    :user        "PG_USER"
