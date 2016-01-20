@@ -93,6 +93,7 @@
                 <configuration>
                     <sourceDirectories>
                         <sourceDirectory>src/main/clojure</sourceDirectory>
+                        <sourceDirectory>src/main/resources</sourceDirectory>
                     </sourceDirectories>
                     <testSourceDirectories>
                         <testSourceDirectory>src/test/clojure</testSourceDirectory>
