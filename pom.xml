@@ -15,26 +15,72 @@
         </repository>
     </repositories>
     <dependencies>
-        <dependency>
-            <groupId>jline</groupId>
-            <artifactId>jline</artifactId>
-            <version>0.9.94</version>
-        </dependency>
+        <!-- JDBC start -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>9.4-1201-jdbc41</version>
             <scope>runtime</scope>
         </dependency>
+        <!-- JDBC stop -->
+        <!-- JAVAEE capacity start -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- JAVAEE capacity stop -->
+        <!-- ORM start -->
+        <dependency>
+            <groupId>korma</groupId>
+            <artifactId>korma</artifactId>
+            <version>0.4.2</version>
+        </dependency>
+        <!-- ORM stop -->
+        <!-- Route start -->
+        <dependency>
+            <groupId>liberator</groupId>
+            <artifactId>liberator</artifactId>
+            <version>0.14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>ring</groupId>
+            <artifactId>ring-defaults</artifactId>
+            <version>0.1.5</version>
+        </dependency>
+        <dependency>
+            <groupId>compojure</groupId>
+            <artifactId>compojure</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+        <!-- Route stop -->
+        <!-- Clojure capacity start -->
         <dependency>
             <groupId>org.clojure</groupId>
             <artifactId>clojure</artifactId>
             <version>1.7.0</version>
         </dependency>
         <dependency>
-            <groupId>korma</groupId>
-            <artifactId>korma</artifactId>
-            <version>0.4.2</version>
+            <groupId>org.clojure</groupId>
+            <artifactId>tools.nrepl</artifactId>
+            <version>0.2.12</version>
+        </dependency>
+        <dependency>
+            <groupId>jline</groupId>
+            <artifactId>jline</artifactId>
+            <version>0.9.94</version>
+        </dependency>
+        <!-- Clojure capacity stop -->
+        <dependency>
+            <groupId>org.clojure</groupId>
+            <artifactId>data.json</artifactId>
+            <version>0.2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.clojure</groupId>
+            <artifactId>tools.trace</artifactId>
+            <version>0.7.9</version>
         </dependency>
     </dependencies>
     <build>
