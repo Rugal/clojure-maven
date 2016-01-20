@@ -1,21 +1,21 @@
-(ns ga.rugal.core.student
+(ns ga.rugal.core.course
   (:require [korma.core :as korma])
   (:require [ga.rugal.core.entity :refer :all]))
 
 
 (defn get-by-id
   ""
-  [sid]
-  (korma/select student
-    (korma/fields :sid :name)
-    (korma/where {:sid sid})))
+  [cid]
+  (korma/select course
+    (korma/fields :cid :name)
+    (korma/where {:cid cid})))
 
 
 (defn get-by-page
   ""
   [no size]
-  (korma/select student
-    (korma/fields :sid :name)
+  (korma/select course
+    (korma/fields :cid :name)
     (korma/offset (* (- no 1) size))
     (korma/limit size)))
 
@@ -24,7 +24,7 @@
   ""
   [bean]
   (if bean
-    (korma/insert student
+    (korma/insert course
       (korma/values {:name (get bean :name)}))))
 
 
@@ -32,17 +32,17 @@
   ""
   [bean]
   (if bean
-    (korma/update student
+    (korma/update course
       (korma/set-fields {:name (get bean :name)})
-      (korma/where {:sid (get bean :sid)}))))
+      (korma/where {:cid (get bean :cid)}))))
 
 
 (defn delete
   ""
-  [sid]
-  (if (get-by-id sid)
-    (korma/delete student
-      (korma/where {:sid sid}))))
+  [cid]
+  (if (get-by-id cid)
+    (korma/delete course
+      (korma/where {:cid cid}))))
 
 
 (defn count-total
@@ -50,7 +50,7 @@
   []
   ;(korma/exec-raw  ["SELECT count(mid) total FROM menu"] :results)
   (->
-    (korma/select student
-      (korma/aggregate (count :sid) :total))
+    (korma/select course
+      (korma/aggregate (count :cid) :total))
     first
     :total))
