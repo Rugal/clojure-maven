@@ -1,0 +1,9 @@
+machine:
+    java:
+        version: oraclejdk8
+
+database:
+    override:
+        # replace CircleCI's generated database.yml
+  - cp src/main/resources/ga/rugal/core/db_circleci.clj  src/main/resources/ga/rugal/core/db.clj
+    - psql -f 'db/postgresql.sql' circle_test ubuntu
