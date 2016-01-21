@@ -11,6 +11,12 @@
 
 (deftest test-get-by-id
   (testing "get by id"
+    (let [id 1 bean  (get-by-id-full id)]
+      (is (not (empty? bean))))))
+
+
+(deftest test-get-by-id-full
+  (testing "get by id full"
     (let [id 1 bean  (get-by-id id)]
       (is (not (empty? bean))))))
 
