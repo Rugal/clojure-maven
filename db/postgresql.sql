@@ -34,7 +34,8 @@ ALTER TABLE public.course OWNER TO postgres;
 CREATE TABLE registration (
     rid integer NOT NULL,
     cid integer,
-    sid integer
+    sid integer,
+    score integer
 );
 
 
@@ -70,19 +71,19 @@ COPY course (cid, name) FROM stdin;
 -- Data for Name: registration; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY registration (rid, cid, sid) FROM stdin;
-1	1	1
-2	1	2
-3	1	3
-4	1	4
-5	2	1
-6	2	4
-7	3	3
-8	3	1
-9	4	4
-10	4	1
-11	5	1
-12	5	3
+COPY registration (rid, cid, sid, score) FROM stdin;
+1	1	1	100
+2	1	2	100
+3	1	3	100
+4	1	4	100
+5	2	1	100
+6	2	4	100
+7	3	3	100
+8	3	1	100
+9	4	4	100
+10	4	1	100
+11	5	1	100
+12	5	3	100
 \.
 
 

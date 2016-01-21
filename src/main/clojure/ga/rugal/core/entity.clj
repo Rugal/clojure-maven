@@ -2,6 +2,7 @@
   (:require [korma.core :as korma])
   (:require [ga.rugal.core.db :refer :all]))
 
+
 (declare student course registration)
 
 
@@ -18,5 +19,5 @@
 
 (korma/defentity registration
   (korma/pk :rid)
-  (korma/has-one student)
-  (korma/has-one course))
+  (korma/belongs-to student {:fk :sid})
+  (korma/belongs-to course {:fk :cid}))
